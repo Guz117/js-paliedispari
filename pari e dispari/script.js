@@ -11,41 +11,41 @@ In un secondo momento creiamo delle funzioni per i numeri random e per il check 
 
 const selectNumber = parseInt(prompt('Segli un numero da 1 a 5'));
 console.log(selectNumber)
-let randomNumberPC = Math.floor((Math.random() * 5) + 1);
-console.log(randomNumberPC)
-
-let sum = selectNumber + randomNumberPC;
-console.log(sum)
-
-if (sum % 2 == 1) {
-    sum = 'dispari'
-    console.log(sum)
-} else if (sum % 2 == 0) {
-    sum = 'pari'
-    console.log(sum)
-}
-
-// function randomNumberPC(numerorandom) {
-//     let randomNumber = Math.floor((Math.random() * 5) + 1);
-//     return randomNumber
-// }
-
+// let randomNumberPC = Math.floor((Math.random() * 5) + 1);
 // console.log(randomNumberPC)
 
+// let sum = selectNumber + randomNumberPC;
+// console.log(sum)
 
-
-// function check(somma) {
-//     let sum = selectNumber + randomNumberPC;
+// if (sum % 2 == 1) {
+//     sum = 'dispari'
 //     console.log(sum)
-//     if (sum % 2 == 1) {
-//         somma = 'dispari'
-//         console.log(sum)
-//     } else if (sum % 2 == 0) {
-//         somma = 'pari'
-//         console.log(sum)
-//     }
-//     return check
+// } else if (sum % 2 == 0) {
+//     sum = 'pari'
+//     console.log(sum)
 // }
 
-// console.log(check)
+function randomNumberPC(numerorandom) {
+    let randomNumber = Math.floor((Math.random() * 5) + 1);
+    return randomNumber
+}
+
+console.log(randomNumberPC)
+
+
+
+function check(somma) {
+    let sum = selectNumber + randomNumberPC;
+    console.log(sum)
+    if (sum % 2 == 1) {
+        somma = 'dispari'
+        console.log(sum)
+    } else if (sum % 2 == 0) {
+        somma = 'pari'
+        console.log(sum)
+    }
+    return check
+}
+
+console.log(check)
 
