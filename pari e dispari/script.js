@@ -8,6 +8,12 @@ Dichiariamo chi ha vinto
 In un secondo momento creiamo delle funzioni per i numeri random e per il check pari dispari
 */
 
+let scelta = prompt('pari o dispari?');
+
+    while (scelta != 'pari' && scelta != 'dispari') {
+        alert('scelta non valida');
+        scelta = prompt('pari o dispari?');
+    }
 
 const selectNumber = parseInt(prompt('Segli un numero da 1 a 5'));
 console.log(selectNumber)
@@ -25,27 +31,39 @@ console.log(selectNumber)
 //     console.log(sum)
 // }
 
-function randomNumberPC(numerorandom) {
+let numberRandomFromFunction = randomNumberPC();
+console.log(numberRandomFromFunction);
+let returnCheck = check(numberRandomFromFunction, selectNumber);
+console.log(returnCheck);
+
+//controllo chi ha vinto
+//se è pari ha vinto l'utente se ha dichiarato pari
+//altrimenti il pc
+//se è dispari ha vinto l'utente se ha dichiarato dispari
+//altrimenti il pc
+
+if (returnCheck == scelta) {
+    console.log('Hai vinto');
+} else {
+    console.log('Non hai vinto')
+} 
+
+ 
+function randomNumberPC() {
     let randomNumber = Math.floor((Math.random() * 5) + 1);
-    return randomNumber
+    return randomNumber;
 }
 
-console.log(randomNumberPC)
 
-
-
-function check(somma) {
-    let sum = selectNumber + randomNumberPC;
-    console.log(sum)
+function check(numberRndEnter, userNumber) {
+    let sum = userNumber + numberRndEnter;
     if (sum % 2 == 1) {
-        somma = 'dispari'
-        console.log(sum)
+        somma = 'dispari';
     } else if (sum % 2 == 0) {
-        somma = 'pari'
-        console.log(sum)
+        somma = 'pari';
+        console.log(sum);
     }
-    return check
+    return somma;
 }
 
-console.log(check)
 
